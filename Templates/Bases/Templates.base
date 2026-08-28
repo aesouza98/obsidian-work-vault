@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.folder.contains("Templates")
+views:
+  - type: table
+    name: Templates
+    filters:
+      and:
+        - file.name.contains("Template")
+        - '!file.name.contains(".base")'
+    order:
+      - file.name
+      - categories
+      - type
+      - tags
+    sort: []
+    columnSize:
+      file.name: 234
+  - type: table
+    name: Bases
+    filters:
+      and:
+        - file.name.contains(".base")
+    order:
+      - file.name
+      - file.path
+    sort: []
+    columnSize:
+      file.name: 234

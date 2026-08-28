@@ -1,0 +1,41 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Article",
+	"behavior": "create",
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings",
+	"noteContentFormat": "{{content}}",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Clippings]]",
+			"type": "multitext"
+		},
+		{
+			"name": "author",
+			"value": "{{author|wikilink}}",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "published",
+			"value": "{{published|date:YYYY-MM-DD}}",
+			"type": "date"
+		},
+		{
+			"name": "topics",
+			"value": "",
+			"type": "multitext"
+		}
+	],
+	"triggers": []
+}

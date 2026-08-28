@@ -1,0 +1,81 @@
+filters:
+  and:
+    - '!file.name.contains("Template")'
+    - categories.contains(link("People"))
+formulas:
+  Age: (now() - birthday).years.floor()
+properties:
+  file.name:
+    displayName: Name
+  note.tags:
+    displayName: Tags
+  note.birthday:
+    displayName: Birthday
+  note.teams:
+    displayName: Teams
+  note.leader:
+    displayName: Leader
+views:
+  - type: table
+    name: All people
+    order:
+      - file.name
+      - tags
+      - birthday
+      - formula.Age
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: tags
+        direction: ASC
+      - property: formula.Age
+        direction: DESC
+      - property: birthday
+        direction: DESC
+    columnSize:
+      note.tags: 209
+      formula.Age: 99
+  - type: table
+    name: Org
+    filters:
+      and:
+        - list(org).contains(this)
+    order:
+      - file.name
+      - tags
+      - birthday
+      - formula.Age
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: tags
+        direction: ASC
+      - property: formula.Age
+        direction: DESC
+      - property: birthday
+        direction: DESC
+    columnSize:
+      note.tags: 209
+      formula.Age: 99
+  - type: table
+    name: Team
+    filters:
+      and:
+        - list(teams).contains(this)
+    order:
+      - file.name
+      - birthday
+      - leader
+      - teams
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: tags
+        direction: ASC
+      - property: formula.Age
+        direction: DESC
+      - property: birthday
+        direction: DESC
+    columnSize:
+      file.name: 129
+      note.leader: 157

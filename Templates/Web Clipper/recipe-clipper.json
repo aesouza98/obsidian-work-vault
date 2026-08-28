@@ -1,0 +1,58 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Recipe",
+	"behavior": "create",
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings",
+	"noteContentFormat": "{{description}}\n\n## Ingredients\n\n{{schema:recipeIngredient|list:task}}\n\n## Directions\n\n{{schema:recipeInstructions[*].text|list:task}}\n\n## Notes\n\n- ",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Recipes]], [[Clippings]]",
+			"type": "multitext"
+		},
+		{
+			"name": "cuisine",
+			"value": "{{schema:recipeCuisine|wikilink}}",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "ingredients",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "author",
+			"value": "{{schema:author[*].name|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "last",
+			"value": "{{date}}",
+			"type": "date"
+		}
+	],
+	"triggers": [
+		"schema:@Recipe"
+	]
+}

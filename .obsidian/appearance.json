@@ -1,0 +1,11 @@
+{
+  "cssTheme": "Baseline",
+  "floatingNavigation": false,
+  "translucency": false,
+  "showRibbon": false,
+  "enabledCssSnippets": [
+    "sleek-bvisibility"
+  ],
+  "baseFontSize": 16,
+  "baseFontSizeAction": true
+}

@@ -1,0 +1,37 @@
+filters:
+  and:
+    - categories.contains(link("Concepts"))
+    - '!file.name.contains("Template")'
+properties:
+  file.name:
+    displayName: Concept
+  note.topics:
+    displayName: Topics
+  note.via:
+    displayName: Via
+  note.created:
+    displayName: Created
+views:
+  - type: table
+    name: Concepts
+    order:
+      - file.name
+      - topics
+      - via
+      - created
+    sort:
+      - property: created
+        direction: DESC
+  - type: table
+    name: By topic
+    filters:
+      and:
+        - list(topics).contains(this)
+    order:
+      - file.name
+      - topics
+      - via
+      - created
+    sort:
+      - property: created
+        direction: DESC

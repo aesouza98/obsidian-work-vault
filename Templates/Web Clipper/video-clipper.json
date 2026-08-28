@@ -1,0 +1,39 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Video",
+	"behavior": "create",
+	"noteNameFormat": "{{schema:name}}",
+	"path": "Clippings",
+	"noteContentFormat": "![{{schema:name}}]({{url}})",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Clippings]]",
+			"type": "multitext"
+		},
+		{
+			"name": "author",
+			"value": "{{schema:author|wikilink}}",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "published",
+			"value": "{{schema:uploadDate|date:YYYY-MM-DD}}",
+			"type": "date"
+		}
+	],
+	"triggers": [
+		"https://www.youtube.com/watch?v=",
+		"https://youtu.be/"
+	]
+}

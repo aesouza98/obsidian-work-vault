@@ -1,0 +1,15 @@
+{
+  "attachmentFolderPath": "Attachments",
+  "showUnsupportedFiles": true,
+  "autoConvertHtml": true,
+  "spellcheck": false,
+  "trashOption": "local",
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "showLineNumber": false,
+  "userIgnoreFilters": [
+    "Archive/"
+  ],
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Notes"
+}

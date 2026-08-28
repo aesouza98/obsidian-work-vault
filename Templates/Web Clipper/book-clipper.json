@@ -1,0 +1,83 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Book",
+	"behavior": "create",
+	"noteNameFormat": "{{selector:.BookPageTitleSection__title h1}}",
+	"path": "Clippings",
+	"noteContentFormat": "{{selector:.BookPageMetadataSection__description}}",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Books]]",
+			"type": "multitext"
+		},
+		{
+			"name": "author",
+			"value": "{{selector:.ContributorLink__name|unique|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "cover",
+			"value": "{{selector:.BookCover__image img?src|first}}",
+			"type": "text"
+		},
+		{
+			"name": "genre",
+			"value": "{{selector:.BookPageMetadataSection__genres .BookPageMetadataSection__genreButton|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "pages",
+			"value": "{{selector:p[data-testid='pagesFormat']|split:\", \"|slice:0|split:\" \"|slice:0}}",
+			"type": "number"
+		},
+		{
+			"name": "isbn",
+			"value": "{{selector:.DescList|split:\"ISBN\"|slice:1,2|split:\" \"|first}}",
+			"type": "text"
+		},
+		{
+			"name": "isbn13",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "year",
+			"value": "{{selector:p[data-testid='publicationInfo']|split:\" \"|last}}",
+			"type": "text"
+		},
+		{
+			"name": "rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "topics",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "last",
+			"value": "",
+			"type": "date"
+		},
+		{
+			"name": "via",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "to-read",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.goodreads.com/book/"
+	]
+}

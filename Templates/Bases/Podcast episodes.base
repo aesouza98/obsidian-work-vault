@@ -1,0 +1,59 @@
+filters:
+  and:
+    - note.categories.contains(link("Podcast episodes"))
+    - '!file.name.contains("Template")'
+properties:
+  file.name:
+    displayName: Podcast
+  note.show:
+    displayName: Show
+  note.guests:
+    displayName: Guests
+  note.episode:
+    displayName: Episode
+  note.rating:
+    displayName: Rating
+  note.published:
+    displayName: Published
+  note.guest:
+    displayName: Guest
+views:
+  - type: table
+    name: All episodes
+    order:
+      - file.name
+      - show
+      - guests
+      - episode
+      - rating
+      - published
+    sort:
+      - property: published
+        direction: DESC
+  - type: table
+    name: Show
+    filters:
+      and:
+        - list(show).contains(this)
+    order:
+      - file.name
+      - show
+      - episode
+      - rating
+      - published
+      - guests
+    columnSize:
+      note.rating: 83
+  - type: table
+    name: Guest
+    filters:
+      or:
+        - list(guest).contains(this)
+        - list(host).contains(this)
+    order:
+      - file.name
+      - show
+      - guests
+      - episode
+      - rating
+      - published

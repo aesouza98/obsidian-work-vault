@@ -1,0 +1,74 @@
+filters:
+  and:
+    - '!file.name.contains("Template")'
+    - or:
+        - categories.contains(link("Projects"))
+        - list(topics).contains(this)
+properties:
+  note.status:
+    displayName: Status
+  note.url:
+    displayName: URL
+  file.name:
+    displayName: Name
+  note.type:
+    displayName: Type
+  note.year:
+    displayName: Year
+  note.end:
+    displayName: End
+  note.start:
+    displayName: Start
+  note.date:
+    displayName: Date
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - categories.contains(link("Projects"))
+    order:
+      - file.name
+      - type
+      - status
+    sort:
+      - property: status
+        direction: ASC
+      - property: year
+        direction: DESC
+    columnSize:
+      file.name: 209
+      note.type: 199
+  - type: table
+    name: Related
+    filters:
+      and:
+        - file.name != this.file.name
+        - '!categories.contains(link("Projects"))'
+        - '!categories.contains(link("Meetings"))'
+    order:
+      - file.name
+      - categories
+      - status
+      - start
+      - end
+    sort:
+      - property: end
+        direction: DESC
+      - property: start
+        direction: ASC
+  - type: table
+    name: Meetings
+    filters:
+      and:
+        - file.name != this.file.name
+        - categories.contains(link("Meetings"))
+    order:
+      - file.name
+      - type
+      - date
+    sort:
+      - property: file.name
+        direction: DESC
+    columnSize:
+      note.type: 116

@@ -1,0 +1,20 @@
+filters:
+  and:
+    - categories.contains(link("Ideas"))
+    - '!file.name.contains("Template")'
+properties:
+  file.name:
+    displayName: Name
+  note.topics:
+    displayName: Topics
+  note.created:
+    displayName: Created
+views:
+  - type: table
+    name: Ideas
+    order:
+      - file.name
+      - created
+      - topics
+    columnSize:
+      file.name: 266

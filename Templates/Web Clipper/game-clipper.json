@@ -1,0 +1,61 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Game",
+	"behavior": "create",
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings",
+	"noteContentFormat": "## About\n\n{{description}}",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Games]]",
+			"type": "multitext"
+		},
+		{
+			"name": "maker",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "publisher",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "genre",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "year",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "system",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "last",
+			"value": "{{date}}",
+			"type": "date"
+		}
+	],
+	"triggers": [
+		"schema:@VideoGame",
+		"https://store.steampowered.com/app/",
+		"https://www.metacritic.com/game/",
+		"https://www.igdb.com/games/"
+	]
+}

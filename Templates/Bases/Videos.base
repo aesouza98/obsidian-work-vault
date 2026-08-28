@@ -1,0 +1,54 @@
+filters:
+  and:
+    - categories.contains(link("Videos"))
+properties:
+  file.name:
+    displayName: Name
+  note.created:
+    displayName: Created
+  note.author:
+    displayName: Author
+  note.tags:
+    displayName: Tags
+  note.rating:
+    displayName: Rating
+views:
+  - type: table
+    name: Videos
+    order:
+      - file.name
+      - author
+      - rating
+      - created
+      - tags
+    sort:
+      - property: created
+        direction: ASC
+    columnSize:
+      note.author: 284
+      note.rating: 69
+  - type: table
+    name: To-Watch
+    filters:
+      and:
+        - file.tags.contains("videos/to-watch")
+    order:
+      - file.name
+      - author
+      - rating
+      - created
+      - tags
+  - type: table
+    name: Watched
+    filters:
+      and:
+        - file.tags.contains("videos/watched")
+    order:
+      - file.name
+      - author
+      - rating
+      - created
+      - tags
+    columnSize:
+      note.author: 258
+      note.rating: 93

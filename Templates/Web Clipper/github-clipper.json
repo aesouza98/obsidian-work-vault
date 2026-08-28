@@ -1,0 +1,38 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "GitHub Repo",
+	"behavior": "create",
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings",
+	"noteContentFormat": "## About\n\n{{description}}\n\n{{content}}",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Tech]], [[Clippings]]",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "topics",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "last",
+			"value": "{{date}}",
+			"type": "date"
+		}
+	],
+	"triggers": [
+		"https://github.com/"
+	]
+}

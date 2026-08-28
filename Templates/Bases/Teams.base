@@ -1,0 +1,15 @@
+filters:
+  and:
+    - categories.contains(link("Teams"))
+    - '!file.name.contains("Template")'
+properties:
+  file.name:
+    displayName: Team
+  note.loc:
+    displayName: Location
+views:
+  - type: table
+    name: Teams
+    order:
+      - file.name
+      - loc

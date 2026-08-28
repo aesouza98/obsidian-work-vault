@@ -1,0 +1,62 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Product",
+	"behavior": "create",
+	"noteNameFormat": "{{title}}",
+	"path": "Clippings",
+	"noteContentFormat": "{{description}}",
+	"properties": [
+		{
+			"name": "categories",
+			"value": "[[Products]]",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "maker",
+			"value": "{{schema:@Product:brand.name|wikilink}}",
+			"type": "multitext"
+		},
+		{
+			"name": "model",
+			"value": "{{schema:@Product:model}}",
+			"type": "text"
+		},
+		{
+			"name": "rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "price",
+			"value": "{{schema:@Product:offers.price}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "acquired",
+			"value": "",
+			"type": "date"
+		},
+		{
+			"name": "monthlyUses",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"schema:@Product",
+		"https://www.mercadolivre.com.br/",
+		"https://produto.mercadolivre.com.br/",
+		"https://www.amazon.com.br/",
+		"https://www.amazon.com/"
+	]
+}

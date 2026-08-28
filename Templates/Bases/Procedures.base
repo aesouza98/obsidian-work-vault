@@ -1,0 +1,58 @@
+filters:
+  and:
+    - categories.contains(link("Procedures"))
+    - '!file.name.contains("Template")'
+properties:
+  file.name:
+    displayName: Procedure
+  note.last:
+    displayName: Last
+  note.type:
+    displayName: Type
+  note.topics:
+    displayName: Topics
+  note.categories:
+    displayName: Categories
+views:
+  - type: table
+    name: All
+    order:
+      - file.name
+      - type
+      - topics
+      - last
+      - categories
+    sort:
+      - property: last
+        direction: DESC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Type
+    filters:
+      and:
+        - list(type).contains(this)
+    order:
+      - file.name
+      - topics
+      - last
+      - categories
+    sort:
+      - property: last
+        direction: DESC
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Topic
+    filters:
+      and:
+        - list(topics).contains(this)
+    order:
+      - file.name
+      - type
+      - last
+    sort:
+      - property: last
+        direction: DESC
+      - property: file.name
+        direction: ASC

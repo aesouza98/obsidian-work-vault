@@ -1,0 +1,9 @@
+filters:
+  and:
+    - file.tags.contains("note")
+views:
+  - type: table
+    name: Journalless
+    filters:
+      and:
+        - '!file.tags.contains("journal")'
